@@ -13,6 +13,29 @@ output: 1
 
 */
 
-function HammingDistance(strArr) {}
+function HammingDistance(strArr) {
+  let count = 0;
+
+    if (strArr.length !== 2)
+
+            return "Invalid input: Input must be an array of exactly two strings.";
+    
+    else if (typeof strArr[0] !== "string" || typeof strArr[1] !== "string")
+
+            return "Invalid input: Both elements must be strings.";
+    
+    else if (strArr[0].length !== strArr[1].length)
+    
+            return "Invalid input: Strings must be of equal length.";
+    
+    else
+
+        for (let i = 0; i < strArr[0].length; i++)
+            if (strArr[0][i] !== strArr[1][i]) 
+                 count++;
+    
+
+        return count;
+}
 
 module.exports = HammingDistance;
